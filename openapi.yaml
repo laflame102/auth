@@ -1,0 +1,29 @@
+openapi: 3.0.0
+info:
+  title: API Example
+  description: Опис вашого API
+  version: 1.0.0
+  license:
+    name: MIT
+    url: https://opensource.org/licenses/MIT
+servers:
+  - url: https://api.docs.com
+    description: Основний сервер
+paths:
+  /users:
+    get:
+      operationId: getUsers
+      summary: Отримати список користувачів
+      security:
+        - apiKeyAuth: []
+      responses:
+        '200':
+          description: Успішна відповідь
+        '400':
+          description: Невірний запит
+components:
+  securitySchemes:
+    apiKeyAuth:
+      type: apiKey
+      in: header
+      name: Authorization
